@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const customerSchema = new mongoose.Schema({
     userId: { 
-        type: Schema.Types.ObjectId, 
+        type: mongoose.Schema.Types.ObjectId, 
         ref: 'User', 
         required: true 
     },
@@ -18,7 +18,7 @@ const customerSchema = new mongoose.Schema({
 
     location: String,
 
-    externalId: { 
+    customer_external_id: { 
         type: String, 
         index: true, 
         sparse: true 

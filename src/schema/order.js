@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-    customerId: { 
-        type: Schema.Types.ObjectId, 
+    customer_external_id: {// id of the external customer  
+        type: String, 
         ref: 'Customer', 
         required: true 
     },
     userId: {
-         type: Schema.Types.ObjectId,
+         type: mongoose.Schema.Types.ObjectId,
          ref: 'User', 
          required: true 
         }, 
@@ -21,7 +21,7 @@ const orderSchema = new mongoose.Schema({
         type: Date, 
         required: true 
     },
-    externalId: { 
+    order_external_id: { // if of the external order 
         type: String, 
         index: true, 
         sparse: true 
