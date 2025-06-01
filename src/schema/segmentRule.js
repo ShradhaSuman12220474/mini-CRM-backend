@@ -3,12 +3,13 @@ import mongoose from "mongoose";
 const segmentRuleSchema = new mongoose.Schema({
 
     userId: { 
-        type: Schema.Types.ObjectId, 
+        type: mongoose.Schema.Types.ObjectId, 
         ref: 'User', 
         required: true 
     },
     rule : {
-        string
+        type : String,
+        required : true,
     }
 }, {timestamps: true});
 

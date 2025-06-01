@@ -1,4 +1,6 @@
+import { CommunicationLog } from "../schema/communicationLogs.js";
 import { createCampaignService, getAllCompaignService } from "../services/compaignService.js";
+import { sendMessage } from "../utils/vendorAPI.js";
 
 export async function createCompaignController(req,res){
     console.log(req.body);
@@ -23,6 +25,23 @@ export async function createCompaignController(req,res){
         console.log("Final compaignDetails:", compaignDetails);
 
         const savedCompaign = await createCampaignService(compaignDetails);
+
+        // insert the logs to the communication_table for maintianing a record;
+
+        const logs = savedCompaign.audienceIds.map(cid => ({
+        campaignId: savedCompaign._id,
+        customerId: cid,
+        message : "Hello ",
+        status: 'PENDING',
+        }));
+        await CommunicationLog.insertMany(logs);
+
+        console.log(logs);
+
+        savedCompaign.audienceIds.forEach(async(cid) => {
+            const personalizedMsg = `Hi User${cid.toString().slice(-4)}, ${message}`;
+            await sendMessage(`User${cid.toString().slice(-4)}`, cid, personalizedMsg, savedCompaign._id);
+        });
 
         return res.status(200).json({
             success: true,
@@ -55,6 +74,6 @@ export async function getAllCompaignController(req,res){
             message : "Data not found",
         })
 
-        
+
     }
 }
