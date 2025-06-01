@@ -8,7 +8,7 @@ const PORT = 8080;
 const app = express();
 
 app.use(express.urlencoded({ extended: true }))
-
+app.use(express.json());
 
 app.get('/ping',(req,res)=>{
     console.log(req.user);

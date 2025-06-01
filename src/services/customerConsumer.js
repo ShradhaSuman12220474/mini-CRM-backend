@@ -23,15 +23,15 @@ async function startWorker() {
           const { userId, row } = message.message;
           const data = JSON.parse(row);
             lastId = message.id;
-          console.log("📥 Processing customer:", data);
+        //   console.log("📥 Processing customer:", data);
 
           const user = await Customer.findOneAndUpdate(
             { email: data.email, userId },
-            { ...data, userId },
-            { upsert: true, new: true }
+            { ...data, userId  },
           );
+          
         //   lastSeenId = id;
-        //   console.log(user);
+          console.log(user);
 
         }
       }

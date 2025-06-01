@@ -23,6 +23,22 @@ const customerSchema = new mongoose.Schema({
         index: true, 
         sparse: true 
     },
+    spend: {
+        type: Number,
+        default: 0,
+        min: 0
+    },
+
+    visits: {
+        type: Number,
+        default: 0,
+        min: 0
+    },
+
+    lastActive: {
+        type: Date,
+        default: Date.now
+    }
 },{timestamps:true});
 
 const customer = mongoose.model('Customer', customerSchema);

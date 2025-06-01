@@ -17,13 +17,14 @@ const compaignSchema = new mongoose.Schema({
     intent: { 
         type: String 
     },
-    ruleId: { 
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'SegmentRule', 
-        required: true 
+    rule: { 
+        type : String
     },
-    customerIds: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Customer' }], 
-
+    audienceIds: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Customer' }], 
+    audienceSize : {
+        type : Number,
+    },
+    
     status: { 
         type: String, 
         enum: ['draft', 'sent', 'error'], 

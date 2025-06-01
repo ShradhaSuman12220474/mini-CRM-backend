@@ -7,18 +7,9 @@ const segmentRuleSchema = new mongoose.Schema({
         ref: 'User', 
         required: true 
     },
-    logicType: { 
-        type: String, 
-        enum: ['AND', 'OR'], 
-        required: true 
-    },
-    conditions: [
-        {
-        field: { type: String, required: true },
-        op: { type: String, required: true },
-        value: { type: mongoose.Schema.Types.Mixed, required: true }
-        }
-    ],
+    rule : {
+        string
+    }
 }, {timestamps: true});
 
 const segementRule = mongoose.model('SegmentRule', segmentRuleSchema);
