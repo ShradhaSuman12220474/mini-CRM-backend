@@ -3,7 +3,7 @@ import { createCampaignService, getAllCompaignService } from "../services/compai
 import { sendMessage } from "../utils/vendorAPI.js";
 
 export async function createCompaignController(req,res){
-    console.log(req.body);
+    // console.log(req.body);
 
     try{
         // const compaignDetails = req.body.compaignDetails;
@@ -14,7 +14,7 @@ export async function createCompaignController(req,res){
         const { name, message, intent, rule, status } = req.body.compaignDetails;
 
         const compaignDetails = {
-            userId: req.body.user.userId || req.body.user.id,  // whichever you store
+            userId: req.user._id,  // whichever you store
             name,
             message,
             intent,

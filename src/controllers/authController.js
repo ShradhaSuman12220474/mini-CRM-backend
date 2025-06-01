@@ -11,9 +11,9 @@ export async function googleLogin(req,res){
         // call the service layer of google sing in
         
         const user = await googleSignInService(code);
-        const {_id,email} = user;
+        const {_id,email,picture} = user;
 
-        const token = jwt.sign({ _id, email},
+        const token = jwt.sign({ _id, email,picture},
         JWT_SECRET,
         {expiresIn: JWT_TIMEOUT},
         );

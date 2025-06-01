@@ -3,12 +3,14 @@ import { createSegmentService, getAllSegmentService } from "../services/segmentS
 export async function createSegmentController(req,res){
     try{
         // we will be getting user and segment rule as a raw json
-        const user = req.body.user;
+        const user = req.user;
         const rule = req.body.segment_rule;
 
         const newObj = {
             ...user,
-            ...rule
+            ...rule,
+            userId : user._id,
+
         };
 
         const data = await createSegmentService(newObj);
@@ -33,7 +35,7 @@ export async function createSegmentController(req,res){
 export async function getAllSegmentController(req,res){
     try{
         const data = await getAllSegmentService();
-        res.staus(200).json({
+        res.status(200).json({
             success : true,
             message : "Fetched all the segment",
             data

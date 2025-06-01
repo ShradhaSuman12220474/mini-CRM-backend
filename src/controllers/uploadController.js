@@ -3,10 +3,17 @@ import { Readable } from 'stream';
 import redisClient from '../utils/redisClient.js';
 
 export async function uploadCustomers(req, res) {
+
+
   if (!req.file) return res.status(400).json({ error: "No file uploaded" });
 
   const stream = Readable.from(req.file.buffer.toString('utf-8'));
-  const user = JSON.parse(req.body.user);
+
+
+    const {user} = req;
+
+    console.log(user);
+
 
 const rows = [];
 let rowCount = 0;
@@ -20,7 +27,7 @@ stream
   .on('end', async () => {
     for (const row of rows) {
       await redisClient.xAdd('customer_stream', '*', {
-        userId: user.id,
+        userId: user._id,
         row: JSON.stringify(row),
       });
       rowCount++;

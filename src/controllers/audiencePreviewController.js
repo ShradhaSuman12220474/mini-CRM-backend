@@ -1,7 +1,7 @@
 import audiencePreviewService from "../services/audiencePreviewService.js";
 
 export async function audiencePreviewController(req, res){
-    console.log("Request body:", req.body);
+    // console.log("Request body:", req.body);
     try {
         const  rule  = req.body.rule;
         // console.log(rule);
