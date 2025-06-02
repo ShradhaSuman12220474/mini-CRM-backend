@@ -9,6 +9,7 @@ export async function googleLogin(req,res){
     try{
         const code = req.query.code;
         // call the service layer of google sing in
+        console.log(code);
         
         const user = await googleSignInService(code);
         const {_id,email,picture} = user;

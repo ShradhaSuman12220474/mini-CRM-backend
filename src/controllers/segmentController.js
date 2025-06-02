@@ -7,7 +7,6 @@ export async function createSegmentController(req,res){
         const rule = req.body.segment_rule;
 
         const newObj = {
-            ...user,
             ...rule,
             userId : user._id,
 

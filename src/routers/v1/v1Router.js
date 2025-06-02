@@ -5,6 +5,9 @@ import audienceRouter from './audience.js';
 import compaignRouter from './compaign.js';
 import segmentRouter from './segment.js';
 import deliveryReciptRouter from './deliveryRecipt.js';
+import dashboardRouter from './dashboard.js';
+import orderRouter from './orders.js';
+import customerController from './customers.js';
 
 const router = express.Router();
 
@@ -14,7 +17,12 @@ router.use('/audience',audienceRouter);
 router.use('/compaign', compaignRouter);
 router.use('/segment', segmentRouter);
 router.use('/deliveryReceipt', deliveryReciptRouter);
+router.use('/orders',orderRouter);
+router.use('/customers',customerController);
 
+
+
+router.use('/dashboard-summary', dashboardRouter );
 
 
 

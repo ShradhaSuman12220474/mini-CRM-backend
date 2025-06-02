@@ -11,14 +11,14 @@ export async function createCompaignController(req,res){
         // const user = JSON.parse(req.body.user);
         // const compaign = JSON.parse(req.body.compaignDetails);
 
-        const { name, message, intent, rule, status } = req.body.compaignDetails;
+        const { name, message, intent, ruleId, status } = req.body.compaignDetails;
 
         const compaignDetails = {
             userId: req.user._id,  // whichever you store
             name,
             message,
             intent,
-            rule,
+            ruleId,
             status
         };
 
