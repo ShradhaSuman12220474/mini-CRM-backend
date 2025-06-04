@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "ordersWorker" : "node ./src/services/ordersConsumer.js",
+    "customerWorker" : "node ./src/services/customerConsumer.js"
   },
   "keywords": [],
   "author": "",
