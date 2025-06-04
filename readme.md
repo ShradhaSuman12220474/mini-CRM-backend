@@ -230,6 +230,7 @@ POST /api/v1/deliveryReceipt – Callback API to log delivery from dummy vendor
 - Redis (for pub-sub)
 
 - Google Cloud OAuth credentials
+- Redis Client Credentials
 
 ## Environment variable setup
 Create .env file in root:
