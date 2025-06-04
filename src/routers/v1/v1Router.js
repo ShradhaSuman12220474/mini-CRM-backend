@@ -8,6 +8,7 @@ import deliveryReciptRouter from './deliveryRecipt.js';
 import dashboardRouter from './dashboard.js';
 import orderRouter from './orders.js';
 import customerController from './customers.js';
+import AImessageRouter from './AIMessage.js';
 
 const router = express.Router();
 
@@ -19,6 +20,7 @@ router.use('/segment', segmentRouter);
 router.use('/deliveryReceipt', deliveryReciptRouter);
 router.use('/orders',orderRouter);
 router.use('/customers',customerController);
+router.use('/generateMessage',AImessageRouter);
 
 
 
