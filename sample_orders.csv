@@ -1,0 +1,7 @@
+customer_external_id,amount,items,orderDate,order_external_id
+CUST001,199.99,"Book,Pen",2024-01-15,ORD001
+CUST002,89.50,Notebook,2024-02-10,ORD002
+CUST003,349.00,"Laptop Stand,Mouse Pad",2024-03-05,ORD003
+CUST005,45.75,Water Bottle,2024-04-20,ORD004
+CUST006,120.00,Backpack,2024-05-12,ORD005
+CUST000,120,Phone,2024-01-12,ORD000

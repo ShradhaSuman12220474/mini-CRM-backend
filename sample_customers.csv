@@ -1,0 +1,11 @@
+customer_external_id,name,email,lastActive,location,phone,spend,visits
+CUST0001,Alice,alice@example.com,2024-08-10,New York,+1-202-555-1000,2279.9,15
+CUST0002,Bob,bob@example.com,2024-11-28,London,+1-202-555-1001,2942.7,42
+CUST0003,Charlie,charlie@example.com,2024-12-11,Berlin,+1-202-555-1002,7384.9,14
+CUST0004,Diana,diana@example.com,2025-04-04,Paris,+1-202-555-1003,1787.36,23
+CUST0005,Ethan,ethan@example.com,2024-07-13,Tokyo,+1-202-555-1004,7411.01,26
+CUST0006,Fiona,fiona@example.com,2024-06-05,Delhi,+1-202-555-1005,2352.88,36
+CUST0007,George,george@example.com,2025-03-06,Sydney,+1-202-555-1006,368.43,19
+CUST0008,Hannah,hannah@example.com,2025-04-25,Toronto,+1-202-555-1007,1940.74,50
+CUST0009,Ian,ian@example.com,2025-02-28,Dubai,+1-202-555-1008,3252.83,36
+CUST0010,Julia,julia@example.com,2024-12-18,Singapore,+1-202-555-1009,9184.95,19

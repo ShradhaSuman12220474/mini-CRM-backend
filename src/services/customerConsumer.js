@@ -12,7 +12,7 @@ async function startWorker() {
   while (true) {
     try {
       const result = await redisClient.xRead(
-        [{ key: 'customer_stream', id: lastId }], // Use '0' for testing or '$' for new ones only
+        [{ key: 'customer_stream', id: '$' }], // Use '0' for testing or '$' for new ones only
         { BLOCK: 5000, COUNT: 10 }
       );
 
@@ -28,8 +28,9 @@ async function startWorker() {
           const user = await Customer.findOneAndUpdate(
             { email: data.email, userId },
             { ...data, userId  },
+            { upsert: true, new: true }
           );
-          
+
         //   lastSeenId = id;
           console.log(user);
 
